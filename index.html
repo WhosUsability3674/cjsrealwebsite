@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CJ's Website</title>
+  <meta name="description" content="A clean, single-file responsive website template." />
+  <!-- Google Font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent: #6C63FF;
+      --bg-top: linear-gradient(120deg, rgba(0,255,145,0.12), rgba(0,0,0,0));
+      --glass: rgba(255,255,255,0.06);
+      --card: rgba(255,255,255,0.03);
+      color-scheme: light;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:#0f1724; color:#e6eef8}
+
+    /* Custom background pattern */
+    body::before{
+      content: "";
+      position: fixed;inset:0;z-index:-2;
+      background-image: radial-gradient(rgba(0,255,145,0.08) 1px, transparent 1px),
+                        radial-gradient(rgba(0,255,145,0.03) 1px, transparent 1px);
+      background-size: 40px 40px, 80px 80px;
+      opacity:0.9;
+      transform: translateZ(0);
+    }
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 28px;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    }
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+    nav a{color:inherit;text-decoration:none;margin-left:18px;font-weight:600;opacity:0.9}
+
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px
+    }
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .hero h1{font-size:clamp(26px,4vw,40px);margin:0 0 12px}
+    .hero p{margin:0 0 18px;color:#bcd0ff}
+    .cta{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+
+    .features{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .feature{background:var(--card);padding:14px;border-radius:10px;flex:1;min-width:170px}
+    .feature h4{margin:0 0 6px}
+
+    /* Media/Gallery area */
+    .media{border-radius:12px;overflow:hidden;background:#071022}
+    .media img, .media video{width:100%;height:auto;display:block}
+
+    /* About + cards */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px}
+
+    footer{margin-top:36px;padding:18px 0;text-align:center;color:#9fb2ff}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      nav a{display:none}
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    /* Small utilities */
+    .muted{color:#9fb2ff;font-size:14px}
+    .small{font-size:13px}
+    .row{display:flex;gap:12px;align-items:center}
+    .pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600}
+
+    /* Contact form */
+    form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+    input::placeholder,textarea::placeholder{color:#7d93cc}
+    button[type=submit]{background:var(--accent);border:0;padding:10px 12px;border-radius:8px;color:#fff;font-weight:700}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark">M</div>
+      <div>
+        <div style="font-weight:700">My Own Website</div>
+        <div class="muted small">Clean • Responsive • Single-file</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#media">Media</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="pill">Welcome</div>
+        <h1>My single Website Creation</h1>
+        <p>This is my creation of my website that shows my Images, Videos, and about me how I did this.</p>
+        <div class="features">
+          <div class="feature"><h4>Created at?</h4><p class="small muted">Works on my Laptop(while its broken operator)</p></div>
+          <div class="feature"><h4>Attempts to Execute the Website Convert</h4><p class="small muted">5 times</p></div>
+          <div class="feature"><h4>Work time</h4><p class="small muted">5 Hours</p></div>
+        </div>
+        <div style="margin-top:18px">
+          <a class="cta" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <aside>
+        <div class="media">
+          <!-- Replace with your image or video. Example below uses a poster image for the video. -->
+          <video controls poster="https://via.placeholder.com/800x450.png?text=Video+Poster">
+            <source src="Explaination.mp4" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:18px">
+        <div style="flex:1">
+          <h2>Concern about</h2>
+          <p class="muted">In the Video, It explains how I did not work a lot and I had slow time to do, recently, this is how what it only had and this is my creation I made myself.</p>
+          <div class="row" style="margin-top:12px">
+            <div class="small">Converted from File to Website</div>
+          </div>
+        </div>
+        <div style="width:300px">
+          <div class="card">
+            <h4>Upload from</h4>
+            <p class="small muted">I use github to convert this into Website.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h4>Travel Picture</h4>
+          <p class="small muted">This is my Image that shows my Singapore view :)</p>
+        </div>
+        <div class="card">
+          <h4>Efforts</h4>
+          <p class="small muted">My work is always low effort, Im sorry, maybe one day I'll try better.</p>
+        </div>
+        <div class="card">
+          <h4>Programming</h4>
+          <p class="small muted">It was a lot of work trying to code all around for this.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="media" style="margin-top:26px">
+      <h3>Image examples</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
+        <div class="media"><img src="image_no1.jpg" alt="Image 1"></div>
+        <div class="media"><img src="image_no2.jpg" alt="Image 2"></div>
+        <div class="media"><img src="image_no3.jpg" alt="Image 3"></div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:26px">
+      <h3>Contact</h3>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+        <div class="hero-card">
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <textarea id="message" rows="6" placeholder="Write your message..." required></textarea>
+            <div style="display:flex;justify-content:flex-end">
+              <button type="submit">Send message</button>
+            </div>
+          </form>
+          <div id="success" style="display:none;margin-top:10px;padding:10px;background:rgba(108,99,255,0.12);border-radius:8px;color:#eaf0ff">Thanks! (This demo doesn't send email.)</div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h4>Contact Info</h4>
+            <p class="small muted">Email: cjmtenecio@gmail.com<br>Location: Philippines</p>
+            <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:12px 0">
+            <p class="small muted">Contact me for more.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> CJ's Website — Made with a single HTML file
+    </footer>
+  </main>
+
+  <script>
+    // small interactive bits
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      // demo: show success and reset
+      document.getElementById('success').style.display='block';
+      form.reset();
+    });
+
+    // Small accessibility: keyboard shortcut to jump to contact (press "c")
+    window.addEventListener('keydown', (ev)=>{
+      if(ev.key.toLowerCase()==='c' && !ev.altKey && !ev.ctrlKey && !ev.metaKey){
+        document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+      }
+    });
+  </script>
+</body>
+</html>
